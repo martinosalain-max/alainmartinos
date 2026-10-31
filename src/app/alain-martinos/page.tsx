@@ -200,25 +200,26 @@ const collectorMilestones = [
    ALAIN GALLERY
 ========================================================= */
 
+/* =========================================================
+   ALAIN GALLERY
+========================================================= */
+
 const galleryImages: readonly Portrait[] = [
   {
-    src: "/images/alain-gallery/01.jpg",
+    src: "/images/alain-gallery/38.jpg",
     alt: "Alain Martinos, portrait",
   },
-
   {
-    src: "/images/alain-gallery/02.jpg",
-    alt: "Alain Martinos at work in the salon",
+    src: "/images/alain-gallery/39.jpg",
+    alt: "Alain Martinos, portrait",
   },
-
   {
-    src: "/images/alain-gallery/03.jpg",
-    alt: "Alain Martinos performing",
+    src: "/images/alain-gallery/40.jpg",
+    alt: "Alain Martinos, portrait",
   },
-
   {
-    src: "/images/alain-gallery/04.jpg",
-    alt: "Alain Martinos between Lebanon and Germany",
+    src: "/images/alain-gallery/41.jpg",
+    alt: "Alain Martinos, portrait",
   },
 ];
 

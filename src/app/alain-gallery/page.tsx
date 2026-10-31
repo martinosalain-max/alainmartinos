@@ -14,17 +14,25 @@ type GalleryImage = {
 
 // Add your 30 photos to: public/images/alain-gallery/
 // Name them: 01.jpg, 02.jpg, 03.jpg ... 30.jpg
-const galleryImages: readonly GalleryImage[] = Array.from(
-  { length: 37 },
-  (_, index) => {
+const galleryImages: readonly GalleryImage[] = [
+  ...Array.from({ length: 28 }, (_, index) => {
+    const number = String(index + 38).padStart(2, "0");
+
+    return {
+      src: `/images/alain-gallery/${number}.jpg`,
+      alt: `Alain Martinos gallery photograph ${index + 38}`,
+    };
+  }),
+
+  ...Array.from({ length: 37 }, (_, index) => {
     const number = String(index + 1).padStart(2, "0");
 
     return {
       src: `/images/alain-gallery/${number}.jpg`,
       alt: `Alain Martinos gallery photograph ${index + 1}`,
     };
-  },
-);
+  }),
+];
 
 export default function AlainGalleryPage() {
   return (

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 240,
+            "activePatchIndex": 242,
             "patches": [
                 {
                     "date": 1789310746748,
@@ -968,6 +968,14 @@
                 {
                     "date": 1792060165627,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,8 +59,9 @@\n const instagramPosts = [\r\n \r\n   \"https://www.instagram.com/p/DKuMBilNmAY/\",\r\n   \"https://www.instagram.com/p/Cwdql1DI2C2/\",\r\n+   \"https://www.instagram.com/p/Ch63PE7oOUZ/\",\r\n   \"https://www.instagram.com/p/CputLjqIFVq/\",\r\n   \"https://www.instagram.com/p/CYqm76yo4Ru/\",\r\n   \"https://www.instagram.com/p/Cwsqy1qIK69/\",\r\n \r\n"
+                },
+                {
+                    "date": 1793453579166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,12 @@\n import { SectionTitle } from \"@/components/SectionTitle\";\r\n \r\n import { VideoShortsRow } from \"@/components/VideoShortsRow\";\r\n \r\n+import { LazyIframe } from \"@/components/LazyIframe\";\r\n+\r\n+import { fullSizeImageUrl } from \"@/lib/media\";\r\n+\r\n import { CtaBand } from \"@/components/CtaBand\";\r\n \r\n import { Reveal } from \"@/components/Reveal\";\r\n \r\n@@ -200,9 +204,9 @@\n         className=\"pointer-events-none fixed inset-0 -z-10\"\r\n \r\n         style={{\r\n \r\n-          backgroundImage: \"url('/images/salon-purple-background.webp')\",\r\n+          backgroundImage: `url('${fullSizeImageUrl(\"/images/salon-purple-background.webp\")}')`,\r\n \r\n           backgroundSize: \"cover\",\r\n \r\n           backgroundPosition: \"center\",\r\n@@ -427,9 +431,8 @@\n     src=\"/images/logo.jpg?v=white-2\"\r\n     alt=\"Salon Alain Martinos – Hair & Beauty\"\r\n     fill\r\n     priority\r\n-    unoptimized\r\n     sizes=\"(max-width: 1024px) 95vw, 1150px\"\r\n     className=\"object-contain object-center\"\r\n   />\r\n </span>\r\n@@ -588,9 +591,8 @@\n           src=\"/images/alain-intro.jpg\"\r\n           alt=\"Alain Martinos\"\r\n           width={1120}\r\n           height={1372}\r\n-          priority\r\n           sizes=\"(max-width: 640px) 100vw, 600px\"\r\n           className=\"block h-auto w-full object-contain\"\r\n         />\r\n       </div>\r\n@@ -1082,9 +1084,9 @@\n       className=\"mx-auto !mt-5 w-full max-w-[1050px] sm:!mt-6\"\r\n     >\r\n       <div className=\"w-full overflow-hidden rounded-[28px]\">\r\n         <Image\r\n-          src=\"/images/salon-05.jpg\"\r\n+          src=\"C:\\Users\\GamingCorner\\Desktop\\salon-alain\\public\\images\\salonalainmain.jpg\"\r\n           alt=\"Salon Alain interior\"\r\n           width={900}\r\n           height={1600}\r\n           sizes=\"(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1050px\"\r\n@@ -1161,9 +1163,9 @@\n             className=\"relative w-[300px] shrink-0 snap-start overflow-hidden rounded-[1.5rem] bg-white shadow-sm ring-1 ring-black/5 sm:w-[360px]\"\r\n \r\n           >\r\n \r\n-            <iframe\r\n+            <LazyIframe\r\n \r\n               title={`Salon Alain Instagram post ${index + 1}`}\r\n \r\n               src={getInstagramEmbedUrl(postUrl)}\r\n"
+                },
+                {
+                    "date": 1793453585165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1084,9 +1084,9 @@\n       className=\"mx-auto !mt-5 w-full max-w-[1050px] sm:!mt-6\"\r\n     >\r\n       <div className=\"w-full overflow-hidden rounded-[28px]\">\r\n         <Image\r\n-          src=\"C:\\Users\\GamingCorner\\Desktop\\salon-alain\\public\\images\\salonalainmain.jpg\"\r\n+          src=\"/images/salonalainmain.jpg\"\r\n           alt=\"Salon Alain interior\"\r\n           width={900}\r\n           height={1600}\r\n           sizes=\"(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1050px\"\r\n"
                 }
             ],
             "date": 1789310746748,

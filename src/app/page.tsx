@@ -1085,7 +1085,7 @@ export default function HomePage() {
     >
       <div className="w-full overflow-hidden rounded-[28px]">
         <Image
-          src="/images/salon-05.jpg"
+          src="/images/salonalainmain.jpg"
           alt="Salon Alain interior"
           width={900}
           height={1600}

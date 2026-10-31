@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1790078239024,
@@ -20,6 +20,14 @@
                 {
                     "date": 1790079611314,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n // Add your 30 photos to: public/images/alain-gallery/\r\n // Name them: 01.jpg, 02.jpg, 03.jpg ... 30.jpg\r\n const galleryImages: readonly GalleryImage[] = Array.from(\r\n-  { length: 40 },\r\n+  { length: 37 },\r\n   (_, index) => {\r\n     const number = String(index + 1).padStart(2, \"0\");\r\n \r\n     return {\r\n"
+                },
+                {
+                    "date": 1793453389276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n // Add your 30 photos to: public/images/alain-gallery/\r\n // Name them: 01.jpg, 02.jpg, 03.jpg ... 30.jpg\r\n const galleryImages: readonly GalleryImage[] = Array.from(\r\n-  { length: 37 },\r\n+  { length:657 },\r\n   (_, index) => {\r\n     const number = String(index + 1).padStart(2, \"0\");\r\n \r\n     return {\r\n@@ -29,16 +29,19 @@\n export default function AlainGalleryPage() {\r\n   return (\r\n     <main className=\"alain-full-gallery\">\r\n       <div className=\"alain-full-gallery-grid\">\r\n-        {galleryImages.map((image) => (\r\n+        {galleryImages.map((image, index) => (\r\n           <figure key={image.src} className=\"alain-full-gallery-image\">\r\n             <Image\r\n               src={image.src}\r\n               alt={image.alt}\r\n               fill\r\n               sizes=\"(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw\"\r\n               className=\"object-cover\"\r\n+              // The first rows are on screen at load; the rest stay lazy.\r\n+              loading={index < 6 ? \"eager\" : \"lazy\"}\r\n+              fetchPriority={index < 3 ? \"high\" : undefined}\r\n             />\r\n           </figure>\r\n         ))}\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1793453464765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,19 +13,27 @@\n };\r\n \r\n // Add your 30 photos to: public/images/alain-gallery/\r\n // Name them: 01.jpg, 02.jpg, 03.jpg ... 30.jpg\r\n-const galleryImages: readonly GalleryImage[] = Array.from(\r\n-  { length:657 },\r\n-  (_, index) => {\r\n+const galleryImages: readonly GalleryImage[] = [\r\n+  ...Array.from({ length: 28 }, (_, index) => {\r\n+    const number = String(index + 38).padStart(2, \"0\");\r\n+\r\n+    return {\r\n+      src: `/images/alain-gallery/${number}.jpg`,\r\n+      alt: `Alain Martinos gallery photograph ${index + 38}`,\r\n+    };\r\n+  }),\r\n+\r\n+  ...Array.from({ length: 37 }, (_, index) => {\r\n     const number = String(index + 1).padStart(2, \"0\");\r\n \r\n     return {\r\n       src: `/images/alain-gallery/${number}.jpg`,\r\n       alt: `Alain Martinos gallery photograph ${index + 1}`,\r\n     };\r\n-  },\r\n-);\r\n+  }),\r\n+];\r\n \r\n export default function AlainGalleryPage() {\r\n   return (\r\n     <main className=\"alain-full-gallery\">\r\n"
                 }
             ],
             "date": 1790078239024,
